@@ -318,7 +318,7 @@
                         <outlet property="dateTextField" destination="z53-Cq-Pib" id="qlo-ny-4lJ"/>
                         <outlet property="deviceTextField" destination="AFZ-gg-Vde" id="nnP-gC-vcS"/>
                         <outlet property="imageView" destination="msH-wQ-8tV" id="YAt-0P-ZTp"/>
-                        <outlet property="nameTextField" destination="vxA-kk-1H3" id="iYe-nQ-2To"/>
+                        <outlet property="nameTextField" destination="ORU-0i-rig" id="eQu-Z1-C31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXB-zO-rUW" userLabel="First Responder" sceneMemberID="firstResponder"/>

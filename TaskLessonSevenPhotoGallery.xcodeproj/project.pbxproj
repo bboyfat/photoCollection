@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C2988AF9224D624F00BCDA6C /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2988AF8224D624F00BCDA6C /* AddPhotoViewController.swift */; };
+		C2988AFB224D769800BCDA6C /* AddPhotoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2988AFA224D769800BCDA6C /* AddPhotoDelegate.swift */; };
 		C2F67FF3224AAC2F00DCEF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F67FF2224AAC2F00DCEF7B /* AppDelegate.swift */; };
 		C2F67FF5224AAC2F00DCEF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F67FF4224AAC2F00DCEF7B /* ViewController.swift */; };
 		C2F67FF8224AAC2F00DCEF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F67FF6224AAC2F00DCEF7B /* Main.storyboard */; };
@@ -16,13 +17,13 @@
 		C2F68000224AAC3100DCEF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F67FFE224AAC3100DCEF7B /* LaunchScreen.storyboard */; };
 		C2F68008224AAE1F00DCEF7B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F68007224AAE1F00DCEF7B /* PhotoModel.swift */; };
 		C2F6800C224AB02800DCEF7B /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F6800B224AB02800DCEF7B /* PhotoViewCell.swift */; };
-		C2F6800E224AB11500DCEF7B /* Cathegory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F6800D224AB11500DCEF7B /* Cathegory.swift */; };
 		C2F68010224AB41900DCEF7B /* PhototHeaderRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F6800F224AB41900DCEF7B /* PhototHeaderRV.swift */; };
 		C2F68012224AB96500DCEF7B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F68011224AB96500DCEF7B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C2988AF8224D624F00BCDA6C /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		C2988AFA224D769800BCDA6C /* AddPhotoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoDelegate.swift; sourceTree = "<group>"; };
 		C2F67FEF224AAC2F00DCEF7B /* TaskLessonSevenPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskLessonSevenPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F67FF2224AAC2F00DCEF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2F67FF4224AAC2F00DCEF7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		C2F68001224AAC3100DCEF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F68007224AAE1F00DCEF7B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		C2F6800B224AB02800DCEF7B /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
-		C2F6800D224AB11500DCEF7B /* Cathegory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cathegory.swift; sourceTree = "<group>"; };
 		C2F6800F224AB41900DCEF7B /* PhototHeaderRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhototHeaderRV.swift; sourceTree = "<group>"; };
 		C2F68011224AB96500DCEF7B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,12 +70,12 @@
 			children = (
 				C2F67FF2224AAC2F00DCEF7B /* AppDelegate.swift */,
 				C2F67FF4224AAC2F00DCEF7B /* ViewController.swift */,
+				C2988AFA224D769800BCDA6C /* AddPhotoDelegate.swift */,
 				C2F6800F224AB41900DCEF7B /* PhototHeaderRV.swift */,
 				C2F68007224AAE1F00DCEF7B /* PhotoModel.swift */,
 				C2F6800B224AB02800DCEF7B /* PhotoViewCell.swift */,
 				C2988AF8224D624F00BCDA6C /* AddPhotoViewController.swift */,
 				C2F68011224AB96500DCEF7B /* DetailViewController.swift */,
-				C2F6800D224AB11500DCEF7B /* Cathegory.swift */,
 				C2F67FF6224AAC2F00DCEF7B /* Main.storyboard */,
 				C2F67FFC224AAC3100DCEF7B /* Assets.xcassets */,
 				C2F67FFE224AAC3100DCEF7B /* LaunchScreen.storyboard */,
@@ -160,7 +160,7 @@
 				C2F67FF5224AAC2F00DCEF7B /* ViewController.swift in Sources */,
 				C2F68008224AAE1F00DCEF7B /* PhotoModel.swift in Sources */,
 				C2F67FF3224AAC2F00DCEF7B /* AppDelegate.swift in Sources */,
-				C2F6800E224AB11500DCEF7B /* Cathegory.swift in Sources */,
+				C2988AFB224D769800BCDA6C /* AddPhotoDelegate.swift in Sources */,
 				C2F68010224AB41900DCEF7B /* PhototHeaderRV.swift in Sources */,
 				C2F6800C224AB02800DCEF7B /* PhotoViewCell.swift in Sources */,
 				C2988AF9224D624F00BCDA6C /* AddPhotoViewController.swift in Sources */,

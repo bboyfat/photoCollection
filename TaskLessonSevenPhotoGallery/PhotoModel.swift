@@ -23,10 +23,10 @@ class PhotoModel{
     var name: String
     var date =  Date()
     var device: String
-    var photo: String
+    var photo: UIImage
     
     
-    init(name: String, date: Date, device: String, photo: String){
+    init(name: String, date: Date, device: String, photo: UIImage){
         self.name = name
         self.date = date
         self.device = device

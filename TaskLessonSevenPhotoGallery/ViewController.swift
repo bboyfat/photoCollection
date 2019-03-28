@@ -8,20 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDelegate {
+    
 
     @IBOutlet var collectionView: UICollectionView!
     
     
-    var animal: [PhotoModel] = [PhotoModel(name: "Tulp", date: Date(), device: "X", photo:  "2"), PhotoModel(name: "Tulp", date: Date(), device: "XSMax", photo:  "2"), PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  "2"), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  "2")]
-    var flowers: [PhotoModel] = [ PhotoModel(name: "Tulp", date: Date(), device: "XSMax", photo:  "0"), PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  "0"), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  "0")]
-     var nature: [PhotoModel] = [PhotoModel(name: "Tulp", date: Date(), device: "X", photo:  "1"), PhotoModel(name: "Tulp", date: Date(), device: "XSMax", photo:  "1"), PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  "1"), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  "1")]
-     var electronic: [PhotoModel] = [ PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  "3"), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  "3")]
+    var animal: [PhotoModel] = [PhotoModel(name: "Tulp", date: Date(), device: "X", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XSMax", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  UIImage(named: "2")!)]
+    var flowers: [PhotoModel] = [ ]
+     var nature: [PhotoModel] = []
+     var electronic: [PhotoModel] = []
     //var cathegory = Cathegory()
     var model: [Cat] = [Cat(name: "Animal"), Cat(name: "Nature"), Cat(name: "Flowers"), Cat(name: "Electronic")]
+    func didAddPhoto(model: PhotoModel) {
+        self.model[1].data.append(model)
+        collectionView.reloadData()
+    }
     
     
-    var cathegories:[Cathegory] = [.animal,.nature,.flowers,.electronic]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         model[0].data = animal
@@ -32,7 +37,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhoto))
     }
     @objc func addPhoto(){
-        let addPhotoVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC")
+        let addPhotoVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC") as! AddPhotoViewController
+        addPhotoVC.delegate = self
         let navigation = UINavigationController(rootViewController: addPhotoVC)
         present(navigation, animated: true, completion: nil)
     }
@@ -91,7 +97,7 @@ extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoViewCell
         
-        cell.photoIV.image = UIImage(named: "\(model[indexPath.section].data[indexPath.item].photo)")
+        cell.photoIV.image = model[indexPath.section].data[indexPath.item].photo
         print("\(model[indexPath.section].data[indexPath.item].photo)")
         
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(showAction))

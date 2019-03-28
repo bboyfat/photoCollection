@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         guard let device = photoModel?.device else { return }
        print(imagePath, imageName, device)
         
-        imageView?.image = UIImage(named: imagePath)
+        imageView?.image =  imagePath
         nameTextField?.text = imageName
         deviceTextField?.text = device
         categoryTextField?.text = "category"
