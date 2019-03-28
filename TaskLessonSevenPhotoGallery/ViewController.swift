@@ -29,7 +29,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         model[2].data = nature
         model[3].data = electronic
 
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhoto))
+    }
+    @objc func addPhoto(){
+        let addPhotoVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC")
+        let navigation = UINavigationController(rootViewController: addPhotoVC)
+        present(navigation, animated: true, completion: nil)
     }
 
     @objc func showAction(sender: UILongPressGestureRecognizer){
