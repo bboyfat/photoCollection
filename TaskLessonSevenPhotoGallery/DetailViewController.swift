@@ -21,9 +21,14 @@ class DetailViewController: UIViewController {
     
     var photoModel: PhotoModel?
     
+    @IBAction func saveData(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
       super.viewDidLoad()
         setupText()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didFinish))
         view.backgroundColor = .white
         
     }
@@ -31,6 +36,10 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+    }
+    
+    @objc func didFinish(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     

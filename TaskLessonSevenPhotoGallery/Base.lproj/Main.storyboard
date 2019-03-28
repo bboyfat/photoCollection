@@ -145,6 +145,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeK-wE-Az2">
+                                <rect key="frame" x="20" y="599" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AbY-ul-vYa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveData:" destination="qmQ-ON-GIE" eventType="touchUpInside" id="RID-DZ-MFQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -157,6 +171,8 @@
                             <constraint firstItem="dBg-IQ-PlO" firstAttribute="leading" secondItem="qhb-lR-vSr" secondAttribute="trailing" constant="26" id="N0c-kn-fuA"/>
                             <constraint firstItem="OFN-jd-n3b" firstAttribute="leading" secondItem="pve-Pm-cXt" secondAttribute="trailing" constant="47" id="NNC-ot-zlB"/>
                             <constraint firstItem="Nkx-G1-A8l" firstAttribute="trailing" secondItem="dE0-et-Tqd" secondAttribute="trailing" id="RUk-Os-cbh"/>
+                            <constraint firstItem="MeK-wE-Az2" firstAttribute="top" secondItem="OFN-jd-n3b" secondAttribute="bottom" constant="40" id="RWT-hP-fev"/>
+                            <constraint firstItem="MeK-wE-Az2" firstAttribute="leading" secondItem="Nkx-G1-A8l" secondAttribute="leading" constant="20" id="WdT-Or-FEi"/>
                             <constraint firstItem="Nkx-G1-A8l" firstAttribute="trailing" secondItem="xXx-CB-wXW" secondAttribute="trailing" id="Wqc-QL-zvz"/>
                             <constraint firstItem="Nkx-G1-A8l" firstAttribute="trailing" secondItem="OFN-jd-n3b" secondAttribute="trailing" id="WtI-Sa-6HC"/>
                             <constraint firstItem="dBg-IQ-PlO" firstAttribute="top" secondItem="BUl-ZK-iNJ" secondAttribute="bottom" constant="15" id="a49-1Z-zoi"/>
@@ -166,6 +182,7 @@
                             <constraint firstItem="dE0-et-Tqd" firstAttribute="leading" secondItem="OsA-xI-Jwa" secondAttribute="trailing" constant="8" id="dVi-eT-fny"/>
                             <constraint firstItem="xXx-CB-wXW" firstAttribute="top" secondItem="dE0-et-Tqd" secondAttribute="bottom" constant="6" id="eGx-5g-nNY"/>
                             <constraint firstItem="BUl-ZK-iNJ" firstAttribute="top" secondItem="Nkx-G1-A8l" secondAttribute="top" id="f66-s6-kTh"/>
+                            <constraint firstItem="Nkx-G1-A8l" firstAttribute="trailing" secondItem="MeK-wE-Az2" secondAttribute="trailing" constant="20" id="hHn-jy-wCJ"/>
                             <constraint firstItem="BUl-ZK-iNJ" firstAttribute="leading" secondItem="Nkx-G1-A8l" secondAttribute="leading" id="hqc-L7-BPv"/>
                             <constraint firstItem="xXx-CB-wXW" firstAttribute="leading" secondItem="Sp5-U5-h1G" secondAttribute="trailing" constant="28" id="o4t-Q2-6Uf"/>
                             <constraint firstItem="qhb-lR-vSr" firstAttribute="top" secondItem="BUl-ZK-iNJ" secondAttribute="bottom" constant="15" id="ryj-bM-2oD"/>
