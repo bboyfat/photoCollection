@@ -21,11 +21,13 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var dateTextField: UITextField!
     
-    let tapGest = UITapGestureRecognizer(target: self, action: #selector(addPhotoFromGallery))
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhotoFromGallery))
-        imageView.addGestureRecognizer(tapGest)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhotoFromCamera))
+       // navigationItem
+         let tapGest = UITapGestureRecognizer(target: self, action: #selector(addPhotoFromGallery))
+        view.addGestureRecognizer(tapGest)
     }
     @objc func addPhotoFromGallery(){
         let imagePickerController = UIImagePickerController()
