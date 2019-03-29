@@ -14,31 +14,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     @IBOutlet var collectionView: UICollectionView!
     
     
-    var animal: [PhotoModel] = [PhotoModel(name: "Tulp", date: Date(), device: "X", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XSMax", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XS", photo:  UIImage(named: "2")!), PhotoModel(name: "Tulp", date: Date(), device: "XR", photo:  UIImage(named: "2")!)]
-    var flowers: [PhotoModel] = [ ]
-     var nature: [PhotoModel] = []
-     var electronic: [PhotoModel] = []
-    //var cathegory = Cathegory()
-    var model: [Cat] = [Cat(name: "Animal"), Cat(name: "Nature"), Cat(name: "Flowers"), Cat(name: "Electronic")]
-    func didAddPhoto(model: PhotoModel) {
-        self.model[1].data.append(model)
-        collectionView.reloadData()
+   
+    var categories: [Cat] = []
+    var cat: Cat = Cat()
+//    var photoModel: PhotoModel = PhotoModel()
+    
+    func didAddPhoto(cat: Cat) {
+        if self.categories.isEmpty{
+            self.categories.append(cat)
+        } else {
+            for i in 0..<self.categories.count{
+                self.categories.insert(cat, at: i)
+            }
+        }
+        self.collectionView.reloadData()
     }
     
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        model[0].data = animal
-        model[1].data = flowers
-        model[2].data = nature
-        model[3].data = electronic
+
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhoto))
     }
     @objc func addPhoto(){
         let addPhotoVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC") as! AddPhotoViewController
         addPhotoVC.delegate = self
+      addPhotoVC.category = self.cat
+//        addPhotoVC.model = self.photoModel
         let navigation = UINavigationController(rootViewController: addPhotoVC)
         present(navigation, animated: true, completion: nil)
     }
@@ -59,11 +63,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
 //                    let loc = sender.view?.convert(location, to: self.collectionView)
 //
 //                    let indexPath = self.collectionView.indexPathForItem(at: loc ?? CGPoint.zero) ?? IndexPath()
-                    vc.photoModel = self.model[indexPath.section].data[indexPath.item]
+//                    vc.photoModel = self.model[indexPath.section].data[indexPath.item]
                     //
+//                    vc.photoModel = self.photoModel
                     
                     
-                    vc.photoModel = self.model[indexPath.section].data[indexPath.row]
+//                    vc.photoModel = self.model[indexPath.section].data[indexPath.row]
                     
                     let navController = UINavigationController(rootViewController: vc)
                     self.present(navController, animated: true, completion: nil)
@@ -86,19 +91,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
 extension ViewController: UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return model.count
+        print(categories.count)
+        return categories.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
-       return model[section].data.count
+       print(categories[section].data.count)
+       return categories[section].data.count
        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoViewCell
         
-        cell.photoIV.image = model[indexPath.section].data[indexPath.item].photo
-        print("\(model[indexPath.section].data[indexPath.item].photo)")
+           cell.photoIV.image = categories[indexPath.section].data[indexPath.item].photo
+//        print("\(model[indexPath.section].data[indexPath.item].photo)")
         
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(showAction))
         cell.addGestureRecognizer(longTap)
@@ -108,7 +114,7 @@ extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let supplView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! PhototHeaderRV
        
-        supplView.titleLabel.text = model[indexPath.section].name
+        supplView.titleLabel.text = categories[indexPath.section].name
         return supplView
     }
     
@@ -120,30 +126,7 @@ extension ViewController: UICollectionViewDataSource{
 extension ViewController: UICollectionViewDelegate{
     
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(showAction))
-//        collectionView.cellForItem(at: indexPath)?.addGestureRecognizer(longTap)
 
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
-//
-//        vc.photoModel = model[indexPath.section].data[indexPath.item]
-//
-//        navigationController?.pushViewController(vc, animated: true)
-
-//    }
-
-//    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-//
-//
-//    }
-//    func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-//        return true
-//    }
     
     
     

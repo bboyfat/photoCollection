@@ -5,5 +5,11 @@
       <ContextState
          contextName = "DetailViewController.setupText():DetailViewController.swift">
       </ContextState>
+      <ContextState
+         contextName = "AddPhotoViewController.saveBtn(_:):AddPhotoViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AddPhotoViewController.saveBtn(_:):AddPhotoViewController.swift">
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

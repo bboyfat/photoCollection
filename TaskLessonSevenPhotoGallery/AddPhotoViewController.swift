@@ -24,12 +24,17 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var dateTextField: UITextField!
     
-    var model: PhotoModel?
+    
+    
+    var model: PhotoModel = PhotoModel()
+    var category: Cat? 
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(category)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhotoFromCamera))
-       // navigationItem
+       
          navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoFromGallery))
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         
@@ -54,14 +59,27 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func saveBtn(_ sender: Any) {
-        model?.photo = imageView.image!
-        model?.date = Date()
-        model?.device = deviceTextField.text!
-        model?.name = nameTextField.text!
         
-        dismiss(animated: true) {
-            self.delegate?.didAddPhoto(model: self.model!)
-        }
+        guard let image = imageView.image else {return}
+         let date = Date()
+        guard let device = deviceTextField.text else {return}
+        guard let name = nameTextField.text else {return}
+        guard let category = cathegoryTextField.text else {return}
+        
+            if let cat = self.category{
+            
+        self.model.photo = image
+        self.model.date = date
+        self.model.device = device
+        self.model.name = name
+            print(model)
+        cat.name = category
+        cat.data.insert(model, at: 0)
+        
+        self.delegate?.didAddPhoto(cat: cat)
+            }
+          
+        dismiss(animated: true) {}
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -79,3 +97,4 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
    
 
 }
+

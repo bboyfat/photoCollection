@@ -10,28 +10,19 @@ import Foundation
 import UIKit
 
 class Cat{
-    var name: String
+    var name: String = ""
     var data: [PhotoModel] = []
-    init(name: String) {
-        self.name = name
-    }
+    
 }
 
 class PhotoModel{
     
     
-    var name: String
+    var name: String = ""
     var date =  Date()
-    var device: String
-    var photo: UIImage
+    var device: String = ""
+    var photo: UIImage?
     
     
-    init(name: String, date: Date, device: String, photo: UIImage){
-        self.name = name
-        self.date = date
-        self.device = device
-        self.photo = photo
-        
-    }
     
 }
