@@ -59,20 +59,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
                     
-//                    let location = sender.location(in: sender.view)
-//                    let loc = sender.view?.convert(location, to: self.collectionView)
-//
-//                    let indexPath = self.collectionView.indexPathForItem(at: loc ?? CGPoint.zero) ?? IndexPath()
-//                    vc.photoModel = self.model[indexPath.section].data[indexPath.item]
-                    //
-//                    vc.photoModel = self.photoModel
-                    
-                    
-//                    vc.photoModel = self.model[indexPath.section].data[indexPath.row]
-                    
+
                     let navController = UINavigationController(rootViewController: vc)
                     self.present(navController, animated: true, completion: nil)
-                    //            self.navigationController?.pushViewController(vc, animated: true)
+                   
                     
                 }
                 cont.addAction(edit)
@@ -104,8 +94,7 @@ extension ViewController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoViewCell
         
            cell.photoIV.image = categories[indexPath.section].data[indexPath.item].photo
-//        print("\(model[indexPath.section].data[indexPath.item].photo)")
-        
+
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(showAction))
         cell.addGestureRecognizer(longTap)
         return cell
