@@ -17,7 +17,7 @@ class Cat{
 
 class PhotoModel{
     
-    
+    var category: String?
     var name: String = ""
     var date =  Date()
     var device: String = ""

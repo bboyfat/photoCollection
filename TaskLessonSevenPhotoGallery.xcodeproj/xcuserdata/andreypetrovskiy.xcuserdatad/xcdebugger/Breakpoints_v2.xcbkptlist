@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskLessonSevenPhotoGallery/ViewController.swift"
-            timestampString = "575576708.9985451"
+            timestampString = "575668671.360714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "didAddPhoto(cat:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskLessonSevenPhotoGallery/AddPhotoViewController.swift"
-            timestampString = "575576708.9989949"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "saveBtn(_:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "didAddPhoto(model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

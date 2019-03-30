@@ -16,17 +16,34 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     
    
     var categories: [Cat] = []
-    var cat: Cat = Cat()
+    
+//    var cat: Cat = Cat()
 //    var photoModel: PhotoModel = PhotoModel()
     
-    func didAddPhoto(cat: Cat) {
-        if self.categories.isEmpty{
-            self.categories.append(cat)
-        } else {
-            for i in 0..<self.categories.count{
-                self.categories.insert(cat, at: i)
+    func didAddPhoto(model: PhotoModel) {
+       
+        for i in 0..<self.categories.count{
+            if self.categories[i].name == model.category{
+                self.categories[i].data.append(model)
+                self.collectionView.reloadData()
+                return
             }
         }
+        addCategory(model: model)
+       
+        
+       
+        
+    }
+    func addCategory(model: PhotoModel){
+        let cat = Cat()
+        guard let category = model.category else {
+            return
+        }
+        cat.name = category
+        cat.data.append(model)
+        
+        self.categories.append(cat)
         self.collectionView.reloadData()
     }
     
@@ -41,8 +58,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     @objc func addPhoto(){
         let addPhotoVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC") as! AddPhotoViewController
         addPhotoVC.delegate = self
-      addPhotoVC.category = self.cat
-//        addPhotoVC.model = self.photoModel
+
         let navigation = UINavigationController(rootViewController: addPhotoVC)
         present(navigation, animated: true, completion: nil)
     }
@@ -85,7 +101,7 @@ extension ViewController: UICollectionViewDataSource{
         return categories.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       print(categories[section].data.count)
+      
        return categories[section].data.count
        
     }
@@ -104,6 +120,7 @@ extension ViewController: UICollectionViewDataSource{
         let supplView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! PhototHeaderRV
        
         supplView.titleLabel.text = categories[indexPath.section].name
+        
         return supplView
     }
     

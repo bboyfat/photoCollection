@@ -27,12 +27,12 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     var model: PhotoModel = PhotoModel()
-    var category: Cat? 
+   
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(category)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhotoFromCamera))
        
          navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoFromGallery))
@@ -66,18 +66,18 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         guard let name = nameTextField.text else {return}
         guard let category = cathegoryTextField.text else {return}
         
-            if let cat = self.category{
+        
+        
             
         self.model.photo = image
         self.model.date = date
         self.model.device = device
         self.model.name = name
+        self.model.category = category
             print(model)
-        cat.name = category
-        cat.data.insert(model, at: 0)
+       
+         self.delegate?.didAddPhoto(model: model)
         
-        self.delegate?.didAddPhoto(cat: cat)
-            }
           
         dismiss(animated: true) {}
     }
