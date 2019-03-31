@@ -11,6 +11,11 @@ import CoreData
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDelegate {
     
+    
+    
+    
+   
+    
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -19,6 +24,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     var categories: [Cat] = []
     var photos: [Photo] = []
     
+    
+    func didEdtiPhoto(model: Photo) {
+        for i in 0..<self.categories.count{
+        let item = self.photos.index(of: model)
+       let reloadPath = IndexPath(item: item!, section: i)
+            self.collectionView.reloadItems(at: [reloadPath])
+    }
+    }
     
     
 //    var cat: Cat = Cat()
@@ -53,7 +66,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     
     func didAddPhoto(model: Photo) {
         
-//        fetchRequest()
+
        
          for i in 0..<self.categories.count{
             if self.categories[i].name == model.category{
@@ -149,11 +162,48 @@ extension ViewController: UICollectionViewDelegate{
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: "EDITING", message: nil, preferredStyle: .actionSheet)
+        
+        let editAction = UIAlertAction(title: "Edit", style: .default) { (_) in
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addPhotoVC") as! AddPhotoViewController
+            let navController = UINavigationController(rootViewController: vc)
+            vc.delegate = self
+            
+            
+            self.present(navController, animated: true, completion: nil)
+            
+        }
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+             let photo = self.categories[indexPath.section].data[indexPath.item]
+            
+            let context = CoreDataManager.shared.persistentContainer.viewContext
+            
+                
+            
+            self.categories[indexPath.section].data.remove(at: indexPath.row)
+            
+            self.collectionView.deleteItems(at: [indexPath])
+                
+                context.delete(photo)
+            do{
+                try context.save()
+                
+            } catch let delErr{
+                print("Unnable to delete..", delErr)
+            }
+            
+            }
 
-        self.categories[indexPath.section].data.remove(at: indexPath.row)
-         
-        self.collectionView.deleteItems(at: [indexPath])
+        
+        
+        
+        alert.addAction(editAction)
+        alert.addAction(deleteAction)
+        present(alert, animated: true, completion: nil)
 
+        
     }
     
     

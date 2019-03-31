@@ -20,7 +20,6 @@
 		C2F68008224AAE1F00DCEF7B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F68007224AAE1F00DCEF7B /* PhotoModel.swift */; };
 		C2F6800C224AB02800DCEF7B /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F6800B224AB02800DCEF7B /* PhotoViewCell.swift */; };
 		C2F68010224AB41900DCEF7B /* PhototHeaderRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F6800F224AB41900DCEF7B /* PhototHeaderRV.swift */; };
-		C2F68012224AB96500DCEF7B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F68011224AB96500DCEF7B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		C2F68007224AAE1F00DCEF7B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		C2F6800B224AB02800DCEF7B /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		C2F6800F224AB41900DCEF7B /* PhototHeaderRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhototHeaderRV.swift; sourceTree = "<group>"; };
-		C2F68011224AB96500DCEF7B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			children = (
 				C2F67FF4224AAC2F00DCEF7B /* ViewController.swift */,
 				C293CFA222500AE2003CD192 /* MyAlertViewController.swift */,
-				C2F68011224AB96500DCEF7B /* DetailViewController.swift */,
 				C2988AF8224D624F00BCDA6C /* AddPhotoViewController.swift */,
 			);
 			path = Controller;
@@ -204,7 +201,6 @@
 				C2F6800C224AB02800DCEF7B /* PhotoViewCell.swift in Sources */,
 				C2988AF9224D624F00BCDA6C /* AddPhotoViewController.swift in Sources */,
 				C293CFA12250088E003CD192 /* CoreDataManager.swift in Sources */,
-				C2F68012224AB96500DCEF7B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

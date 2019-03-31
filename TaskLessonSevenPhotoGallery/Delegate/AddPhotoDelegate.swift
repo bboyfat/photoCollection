@@ -11,4 +11,5 @@ import Foundation
 
 protocol AddPhotoDelegate{
     func didAddPhoto( model: Photo)
+    func didEdtiPhoto(model: Photo)
 }
