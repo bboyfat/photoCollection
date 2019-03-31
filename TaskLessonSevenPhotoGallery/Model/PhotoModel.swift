@@ -15,14 +15,14 @@ class Cat{
     
 }
 
-class PhotoModel{
-    
-    var category: String?
-    var name: String = ""
-    var date =  Date()
-    var device: String = ""
-    var photo: UIImage?
-    
-    
-    
-}
+//class PhotoModel{
+//    
+//    var category: String?
+//    var name: String = ""
+//    var date =  Date()
+//    var device: String = ""
+//    var photo: UIImage?
+//    
+//    
+//    
+//}

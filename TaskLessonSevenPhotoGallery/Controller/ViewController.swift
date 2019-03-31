@@ -35,6 +35,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
                     if self.categories[i].name == photo.category{
                     self.categories[i].data.append(photo)
                         self.collectionView.reloadData()
+                        return
                     }
                     
                 }
@@ -146,10 +147,11 @@ extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         self.categories[indexPath.section].data.remove(at: indexPath.row)
-
+         
         self.collectionView.deleteItems(at: [indexPath])
 
     }
+    
     
     
     

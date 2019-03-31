@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deviceTextField: UITextField!
     
     
-    var photoModel: PhotoModel?
+ var photoModel: Photo?
     
     @IBAction func saveData(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -44,17 +44,19 @@ class DetailViewController: UIViewController {
     
     
     func setupText(){
-        
-        guard let imagePath = photoModel?.photo else { return }
-        guard let imageName = photoModel?.name else {return}
-        guard let device = photoModel?.device else { return }
-       print(imagePath, imageName, device)
-        
-        imageView?.image =  imagePath
+        if let photoModel = self.photoModel{
+            guard let imageData = photoModel.photo else {return}
+            guard let image =  UIImage(data: imageData ) else { return }
+        guard let imageName = photoModel.name else {return}
+        guard let device = photoModel.device else { return }
+       
+     
+        imageView?.image =  image
         nameTextField?.text = imageName
         deviceTextField?.text = device
         categoryTextField?.text = "category"
         dateTextField?.text = "21 21 21"
+        }
     }
   
     
