@@ -53,16 +53,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AddPhotoDel
     
     func didAddPhoto(model: Photo) {
         
-        fetchRequest()
+//        fetchRequest()
        
-//        for i in 0..<self.categories.count{
-//            if self.categories[i].name == model.category{
-//                self.categories[i].data = photos
-//                self.collectionView.reloadData()
-//                return
-//            }
-//        }
-//
+         for i in 0..<self.categories.count{
+            if self.categories[i].name == model.category{
+                self.categories[i].data.append(model)
+                self.collectionView.reloadData()
+                return
+            }
+        }
+       
+        addCategory(model: model)
+        self.collectionView.reloadData()
+        
+
     }
     func addCategory(model: Photo){
         let cat = Cat()

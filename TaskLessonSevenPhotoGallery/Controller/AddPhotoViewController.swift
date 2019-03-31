@@ -88,12 +88,15 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
          photo.setValue(name, forKey: "name")
          photo.setValue(data, forKey: "photo")
          photo.setValue(Date(), forKey: "date")
-        
+        let photoModel = photo as! Photo
         
         do{
             try context.save()
-            if let photoModel = photoModel{
-                self.delegate?.didAddPhoto(model: photoModel) }
+            self.delegate?.didAddPhoto(model: photoModel)
+        dismiss(animated: true)
+            
+                
+            
         } catch let saveErr{
             print("Can't save: ", saveErr)
         }
@@ -104,7 +107,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         
           
-        dismiss(animated: true) {}
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

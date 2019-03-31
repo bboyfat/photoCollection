@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnk-4m-SPH">
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnk-4m-SPH">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
                                         </imageView>
                                     </subviews>
