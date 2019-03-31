@@ -14,26 +14,26 @@
         <scene sceneID="SCz-BP-8Uu">
             <objects>
                 <collectionViewController id="Y39-4n-UFv" customClass="ViewController" customModule="TaskLessonSevenPhotoGallery" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cmZ-ax-2fo">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" springLoaded="YES" id="cmZ-ax-2fo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.56931954620000003" green="0.98812133069999997" blue="0.98432236910000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DNQ-rV-QMI">
-                            <size key="itemSize" width="100" height="101"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="DNQ-rV-QMI">
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="szV-3h-jnm" customClass="PhotoViewCell" customModule="TaskLessonSevenPhotoGallery" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="100" height="101"/>
+                                <rect key="frame" x="10" y="55" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnk-4m-SPH">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -43,6 +43,11 @@
                                     <constraint firstItem="Cnk-4m-SPH" firstAttribute="leading" secondItem="szV-3h-jnm" secondAttribute="leading" id="UfU-rR-GSQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Cnk-4m-SPH" secondAttribute="trailing" id="xoF-5b-3CX"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="photoIV" destination="Cnk-4m-SPH" id="FX0-6b-mky"/>
                                 </connections>
@@ -52,16 +57,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTP-X3-tCC">
-                                    <rect key="frame" x="28" y="8" width="319" height="34"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTP-X3-tCC">
+                                    <rect key="frame" x="8" y="8" width="364" height="34"/>
+                                    <color key="backgroundColor" red="0.396873005" green="0.40225117430000001" blue="0.42978186439999999" alpha="0.58093428940000003" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailingMargin" secondItem="mTP-X3-tCC" secondAttribute="trailing" constant="20" id="3p2-b6-W3J"/>
-                                <constraint firstItem="mTP-X3-tCC" firstAttribute="leading" secondItem="LDd-E2-koi" secondAttribute="leadingMargin" constant="20" id="Zgl-xi-1IS"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="mTP-X3-tCC" secondAttribute="trailing" constant="-5" id="3p2-b6-W3J"/>
+                                <constraint firstItem="mTP-X3-tCC" firstAttribute="leading" secondItem="LDd-E2-koi" secondAttribute="leadingMargin" id="Zgl-xi-1IS"/>
                                 <constraint firstAttribute="bottomMargin" secondItem="mTP-X3-tCC" secondAttribute="bottom" id="aLe-Ez-b3U"/>
                                 <constraint firstItem="mTP-X3-tCC" firstAttribute="top" secondItem="LDd-E2-koi" secondAttribute="topMargin" id="htA-NO-3ZK"/>
                             </constraints>
