@@ -17,7 +17,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cmZ-ax-2fo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.56931954620000003" green="0.98812133069999997" blue="0.98432236910000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DNQ-rV-QMI">
                             <size key="itemSize" width="100" height="101"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
@@ -324,6 +324,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXB-zO-rUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="188"/>
+        </scene>
+        <!--My Alert View Controller-->
+        <scene sceneID="abt-dx-s2h">
+            <objects>
+                <viewController storyboardIdentifier="alertVC" modalPresentationStyle="overCurrentContext" id="Jox-5N-4jM" customClass="MyAlertViewController" customModule="TaskLessonSevenPhotoGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t7y-LN-XF9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="typeYourNameHere" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHk-y0-O8H">
+                                <rect key="frame" x="50" y="318.5" width="275" height="30"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.62949486300000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pNP-7a-FV4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkJ-8n-5Uz">
+                                <rect key="frame" x="20" y="567" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.72597388699999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zt2-DZ-nC0"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="okBtn:" destination="Jox-5N-4jM" eventType="touchUpInside" id="shS-jy-YcK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Mr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-T8-1xt">
+                                <rect key="frame" x="20" y="263" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eW0-bF-BgI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.21165988869863014" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.14792033894037077" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eHk-y0-O8H" firstAttribute="top" secondItem="LcD-T8-1xt" secondAttribute="bottom" constant="34.5" id="7M5-T8-wV0"/>
+                            <constraint firstItem="LcD-T8-1xt" firstAttribute="leading" secondItem="EAS-su-6EJ" secondAttribute="leading" constant="20" id="BPR-ma-BCd"/>
+                            <constraint firstItem="XkJ-8n-5Uz" firstAttribute="leading" secondItem="EAS-su-6EJ" secondAttribute="leading" constant="20" id="Hac-I2-6aM"/>
+                            <constraint firstItem="eHk-y0-O8H" firstAttribute="centerX" secondItem="t7y-LN-XF9" secondAttribute="centerX" id="LK6-SV-Ali"/>
+                            <constraint firstItem="EAS-su-6EJ" firstAttribute="trailing" secondItem="XkJ-8n-5Uz" secondAttribute="trailing" constant="20" id="LPF-Bu-AUd"/>
+                            <constraint firstItem="eHk-y0-O8H" firstAttribute="centerY" secondItem="t7y-LN-XF9" secondAttribute="centerY" id="S7u-9f-vCz"/>
+                            <constraint firstItem="EAS-su-6EJ" firstAttribute="trailing" secondItem="LcD-T8-1xt" secondAttribute="trailing" constant="20" id="a26-uX-GhI"/>
+                            <constraint firstItem="EAS-su-6EJ" firstAttribute="trailing" secondItem="eHk-y0-O8H" secondAttribute="trailing" constant="50" id="fqk-fR-ocp"/>
+                            <constraint firstItem="eHk-y0-O8H" firstAttribute="leading" secondItem="EAS-su-6EJ" secondAttribute="leading" constant="50" id="h2c-Wk-gNp"/>
+                            <constraint firstItem="EAS-su-6EJ" firstAttribute="bottom" secondItem="XkJ-8n-5Uz" secondAttribute="bottom" constant="50" id="vkX-6w-mL6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EAS-su-6EJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="LcD-T8-1xt" id="OM4-0l-NjO"/>
+                        <outlet property="textField" destination="eHk-y0-O8H" id="x7p-Uj-vOH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAY-dP-rje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4088" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sEP-tP-hIW">

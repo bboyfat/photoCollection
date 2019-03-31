@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -26,9 +27,9 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     
-    var model: PhotoModel = PhotoModel()
+//    var model: PhotoModel = PhotoModel()
    
-    
+    var photoModel: Photo?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +61,9 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func saveBtn(_ sender: Any) {
         
-        guard let image = imageView.image else {return}
-         let date = Date()
+        guard let image = imageView!.image else {return}
+        guard let data = image.pngData() else {return}
+        
         guard let device = deviceTextField.text else {return}
         guard let name = nameTextField.text else {return}
         guard let category = cathegoryTextField.text else {return}
@@ -69,14 +71,37 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         
             
-        self.model.photo = image
-        self.model.date = date
-        self.model.device = device
-        self.model.name = name
-        self.model.category = category
-            print(model)
+//        self.model.photo = image
+//        self.model.date = Date()
+//        self.model.device = device
+//        self.model.name = name
+//        self.model.category = category
+//            print(model)
+        
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let photo = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context)
+        
+        photo.setValue(category, forKey: "category")
+        photo.setValue(device, forKey: "device")
+         photo.setValue(name, forKey: "name")
+         photo.setValue(data, forKey: "photo")
+         photo.setValue(Date(), forKey: "date")
+        
+        
+        do{
+            try context.save()
+            if let photoModel = photoModel{
+                self.delegate?.didAddPhoto(model: photoModel) }
+        } catch let saveErr{
+            print("Can't save: ", saveErr)
+        }
+            
+        
+        
        
-         self.delegate?.didAddPhoto(model: model)
+        
         
           
         dismiss(animated: true) {}

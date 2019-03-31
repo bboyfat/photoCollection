@@ -11,7 +11,7 @@ import UIKit
 
 class Cat{
     var name: String = ""
-    var data: [PhotoModel] = []
+    var data: [Photo] = []
     
 }
 
